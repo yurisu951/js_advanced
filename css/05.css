@@ -1,0 +1,110 @@
+h4 {
+    margin: 100px auto 50px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.tabsbox {
+    position: relative;
+    width: 950px;
+    margin: 0 auto;
+    border: orange 1px solid;
+}
+
+.tabadd {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: 1px solid #ddd;
+}
+.tabadd span {
+    display: inline-block;
+    padding: 2px 7px;
+    cursor: pointer;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    letter-spacing: -4px;
+    border-bottom: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+li {
+    display: inline-block;
+    position: relative;
+    letter-spacing: normal;
+    height: 52px;
+    width: 100px;
+    list-style: none;
+    text-align: center;
+    border-right: 1px solid #ddd;
+
+}
+
+.icon-guanbi {
+    cursor: pointer;
+}
+
+.icon-guanbi::after {
+    content: "x";
+    display: inline-block;
+    position: absolute;
+    padding: 0px 3px 3px 5px;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    line-height: 12px;
+    border-bottom-left-radius: 50%;
+    background-color: #000;
+    color: #fff;
+}
+
+li input {
+    position: relative;
+    left: -6px;
+    height: 22px;
+    width: 100%;
+    /* outline: none; */
+
+}
+
+section input  {
+    height: 250px;
+    width: 750px;
+}
+
+li span:first-child {
+    display: inline-block;
+    width: 65px;
+    height: 50px;
+    line-height: 50px;
+}
+
+li[class*=current] {
+    background-color: #fff;
+}
+
+.tabscon {
+    width: 950px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.tabscon section {
+    display: none;
+    height: 350px;
+    width: 950px;
+    padding: 30px;
+    box-sizing: border-box;
+
+}
+
+.tabscon section[class*=conactive] {
+    display: inline-block;
+}
+

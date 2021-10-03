@@ -9,19 +9,37 @@
     <script>
         // 1. 类没有变量提升，所以必须先定义类，才能通过类实例化对象
         // 2. 类里面的共有属性和方法一定要加this使用。
+        // 3. 方法内的this指向的是这个方法的调用者
+
+        var that;
         class Star {
             constructor(uname, age){
+                // constructor裡面的this指向的是 創建的實例對象
+                console.log(this);
+
+                that = this;
+ 
                 this.uname = uname;
                 this.age = age;
                 this.sing();
                 this.btn = document.querySelector('button');
+
                 this.btn.onclick = this.sing;
             }
 
             sing(){
-                console.log(this.uname);
+                // 这个方法内的this指向的是btn这个按钮，因为是按钮调用了这个函数
+                console.log(this);
+                // console.log(this.uname);  // 结果undefined
+                console.log(that.uname);
+            }
+
+            dance(){
+                // 方法内的this指向的是 实例对象，因为是实例对象调用了这个函数 
+                console.log(this);
             }
         }
+        var ldh = new Star('刘德华', 19);
 
     </script>
 </body>
