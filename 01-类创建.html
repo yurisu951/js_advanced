@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01.类创建</title>
+</head>
+<body>
+    <script>
+        // 类的创建
+        class Star {
+        }
+
+        // 类的实例化 创建对象
+        new Star();
+
+        // constructor()方法 - 类的构造函数
+        // 1. 用于传递参数，返回实例对象。
+        // 2. new 命令自动调用该方法。
+        // 3. 若没有定义，会默认创建
+
+
+        // 实际案例演示：
+        class Student {
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+        }
+
+        var zs = new Student('章三',18);
+        console.log(zs); 
+        var ls = new Student("里斯",19);
+        console.log(ls);
+
+    </script>
+</body>
+</html>

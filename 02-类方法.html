@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02.类方法</title>
+</head>
+<body>
+    <script>
+
+        class Star {
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+
+            // 类方法的定义
+            sing(song){
+                // console.log("唱歌🎤");
+                console.log(this.name + song);
+            }
+        }
+
+        var ldh = new Star('刘德华',18);
+        var zxy = new Star("张学友",19);
+        // 类方法调用
+        ldh.sing("冰雨");
+        zxy.sing("李香兰");
+
+    </script>
+</body>
+</html>

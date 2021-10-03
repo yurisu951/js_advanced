@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03.类继承</title>
+</head>
+<body>
+    <script>
+
+       class Father {
+           constructor(x, y){
+               this.x = x;
+               this.y = y;
+           }
+
+           money(){
+               console.log(100);
+           }
+           
+           sum(){
+               console.log(this.x + this.y);
+           }
+
+           say(){
+               return '我是爸爸';
+           }
+       }
+
+    //    子类继承父类
+       class Son extends Father {
+           constructor(x,y){
+               super(x,y); // 默认调用父类的构造函数
+           }
+
+           say(){
+            //    console.log('我是儿子');
+            console.log(super.say() + '的儿子');  // super关键字：调用父类的普通函数
+            // 继承中的属性或着方法查找原则：就近原则
+           }
+
+           //～～～～～～～～～～～～～～～～～～～～～～～～～
+
+           // 子类继承父类加法方法的同时扩展减法方法
+           constructor(x,y){
+            // 利用super调用父类的构造函数：解决父类的属性未赋值问题
+            // super 必须在this之前调用
+            super(x,y);
+
+
+            //    子类定义构造函数将赋值到子类的属性中。
+            // 而当调用父类的方法时，因为父类的属性并未赋值，所以运算有误
+                this.x = x;
+                this.y = y;
+                
+           }
+
+           subtract(){
+               console.log(thie.x - this.y);
+           }
+
+       }
+
+        var son = new Son(1, 5);
+        son.money();
+        son.sum();
+
+
+        
+    </script>
+</body>
+</html>
