@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01.构造函数和原型概述</title>
+</head>
+<body>
+    <script>
+        //  ES6以后才有class类型
+        // 在那之前都是使用构造函数及原型来模拟class的实现（现在多数浏览器还是支援ES5）
+
+        // 创建对象可以通过3个方法
+        //  1. 对象字面量
+            var obj1 = {};
+
+        //  2. new Object()
+            var obj2 = new Object();
+
+        //  3. 自定义构造函数
+        function Star(uname, age){
+            this.uname = uname;
+            this.age = age;
+            this.sing = function(){
+                console.log("我会唱歌");
+            }
+        }
+
+        var ldh = new Star('刘德华',18);
+
+
+        // ✨✨✨ new 在执行时会做四件事情：
+        // （1） 在内存中创建一个新的空对象
+        // （2） 让this指向这个新的对象
+        // （3） 执行构造函数里面的代码，给这个新对象添加属性和方法
+        // （4） 返回这个新的对象（所以构造函数里面不需要return）
+
+
+
+    </script>
+</body>
+</html>
