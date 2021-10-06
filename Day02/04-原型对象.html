@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>04.原型对象</title>
+</head>
+
+<body>
+    <script>
+
+
+        //  1.5 对象原型 __proto__
+
+        // ✨ 对象都会有一个属性 __proto__ ，指向构造函数的prototype原型对象。
+
+
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+        }
+
+        Star.prototype.sing = function () {
+            console.log("我会唱歌");
+        }
+
+        var ldh = new Star('刘德华', 18);
+        ldh.sing();
+        console.log(ldh.__proto__ === Star.prototype);  // true
+
+// ✨✨ 方法查找规则： 先看ldh 对象身上是否有 sing 方法。
+// 如果没有sing这个方法，因为有__proto__ 的存在，会去构造函数的原型对象prototype身上查找
+
+
+    </script>
+</body>
+
+</html>
