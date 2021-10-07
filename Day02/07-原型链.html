@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>07.原型链</title>
+</head>
+
+<body>
+    <script>
+    
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+        }
+        var ldh = new Star('刘德华', 18);
+
+
+        // JS的成员查找机制(就近原则)
+        // 1. 当访问一个对象的属性（包括方法）时，先查找这个对象自身有没有该属性
+        // 2. 若没有，则查找它的原型（__proto__指向的prototype原型对象）
+        // 3. 若没有，则查找原型对象的原型（Object的原型对象）
+        // 4. 直到null为止
+
+
+        Object.prototype.sex = '男';
+        Star.prototype.sex = '女';
+        ldh.sex = '男';
+        console.log(ldh.sex);
+        console.log(ldh.toString());  // 通过原型链查找属性/方法
+
+        Star.sex = '无'; // 静态成员 
+
+
+
+    </script>
+</body>
+
+</html>
