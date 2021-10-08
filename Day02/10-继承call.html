@@ -33,6 +33,7 @@
 
     // 借用父构造函数继承属性
     function Father(uname, age) {
+        // this 指向的是父构造函数的对象实例
         this.uname = uname;
         this.age = age;
     }
@@ -43,7 +44,7 @@
         this.score = score;
     }
 
-        var ldh = new Son('刘德华', 18, 100);
+    var ldh = new Son('刘德华', 18, 100);
 
       
     </script>

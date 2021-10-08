@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.ES5新增方法</title>
+</head>
+<body>
+    <!-- 数组的方法 -->
+    <script>
+        // 迭代，设置return也不会终止迭代
+        // array.forEach(function(currentValue, index, arr));   
+        // currentValue: 数组当前项的值
+        // index：数组当前项的索引
+        // arr：数字对象本身
+
+        var arr = [1, 2, 3];
+        arr.forEach(function(value, index, array){
+            console.log('每个数组元素：' + value);
+            console.log("每个数字索引号：" + index);
+            console.log("数组本身：" + array);
+        });
+
+
+        // 筛选数组，返回新数组，设置return也不会终止迭代 
+        // array.filter(function(currentValue, index, arr));   
+        // currentValue: 数组当前项的值
+        // index：数组当前项的索引
+        // arr：数字对象本身
+
+        var arr = [12, 66, 3, 88];
+        var newArr = arr.filter(function(value, index, array){
+            // return value >=20;
+            return value % 2 === 0;
+        });
+        console.log(newArr);
+
+        // 检测数组中的元素是否满足指定条件，返回布尔值
+        // 如果找到满足条件的元素，则终止循环，不再继续查找
+        // array.some(function(currentValue, index, arr));   
+        // currentValue: 数组当前项的值
+        // index：数组当前项的索引
+        // arr：数字对象本身
+
+        var arr = [12, 30, 3];
+        var result = arr.some(function(value){
+            return value >=20;
+        });
+        console.log(result);
+
+        
+        var arr2 = ['pink', 'blue', 'red'];
+        var result2 = arr2.some(function(value){
+            return value === 'blue';
+        });
+        console.log(result2);
+         
+
+    </script>
+    
+</body>
+</html>

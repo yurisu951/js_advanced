@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>11。借用构造函数继承父类方法</title>
+</head>
+
+<body>
+    <script>
+
+    function Father(uname, age) {
+        this.uname = uname;
+        this.age = age;
+    }
+    Father.prototype.money = function(){
+        console.log(100000);
+    }
+
+    function Son(uname, age, score) {
+        Father.call(this, uname, age);
+        this.score = score;
+    }
+    
+    // 2.
+    // Son.prototype = Father.prototype;  直接赋值会有问题，若修改了子原型对象，父原型对象也会一起变化
+
+    Son.prototype = new Father();
+    // 3.利用对象的形式修改了原型对象，还得利用constructor指回原来的构造函数
+    Son.prototype.constructor = Son;
+
+    // 1.
+    Son.prototype.exam = function(){
+        console.log("孩子要考试");
+    }
+
+    var son = new Son('刘德华', 18, 100);
+    console.log(son);
+    console.log(Father.prototype);
+    console.log(Son.prototype.constructor);
+
+      
+    </script>
+</body>
+
+</html>

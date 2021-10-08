@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14.ES5新增方法_对象</title>
+</head>
+<body>
+    <!-- 对象的方法 -->
+    <script>
+        // 获取对象自身所有的属性
+        // Object.keys()
+       var obj = {
+            id: 1,
+            pname: '小米',
+            price: 3999
+        };
+        var arr = Object.keys(obj);
+        console.log(arr);
+
+
+
+        // 定义对象中新属性或修改原有的属性
+        // Object.defineProperty(obj, prop, descriptor);
+        // obj: 必须，目标对象。
+        // prop：必须，需定义或修改属性的名字
+        // descriptor： 必须，目标熟悉所拥有的特性。对象形式书写：value、writable（是否可以重写）、enumerable（目标属性是否可以被枚举，即可被遍历）、configurable（目标属性是否可以被删除或再次修改特性）
+
+        // obj.num = 1000;   以前的对象添加和修改属性的方式 
+        Object.defineProperty(obj, 'num', {
+            value: 1000
+        });
+        Object.defineProperty(obj, 'id',{
+            // 不允许修改属性值
+            writable: false
+        });
+
+        // 可以删除属性
+        delete obj.pname;
+        
+
+    </script>
+    
+</body>
+</html>
